@@ -17,43 +17,56 @@
   </header>
 
   <main class="main">
-    <label for="password-length-input"> Password Length:
-      <input type="number" id="password-length-input" class="password-length-input js-password-length-input" min="1"
-        value="16"></label>
+    <div class="password-generator">
+      <div class="message-div js-message-div"></div>
 
-    <button class="generate-password-btn js-generate-password-btn">Generate Password</button>
+      <div class="password-field-div">
+        <div class="password-div js-password-div"></div>
+        <button class="copy-btn js-copy-btn">
+          <img src="/src/assets/icons/copy.svg" alt="Copy" class="copy-icon js-copy-icon">
+        </button>
+      </div>
 
-    <div class="toggle-charset-div js-toggle-charset-div">
-      <label for="include-uppercase" class="include-options-label include-uppercase-label js-include-uppercase-label">
-        <input type="checkbox" id="include-uppercase" class="include-options include-uppercase js-include-uppercase"
-          checked>
-        Uppercase
-      </label>
+      <div class="options-div">
+        <label for="password-length-input" class="password-length-input-label">Length:
+          <input type="number" id="password-length-input" class="password-length-input js-password-length-input" min="1"
+            value="16"></label>
 
-      <label for="include-lowercase" class="include-options-label include-lowercase-label js-include-lowercase-label">
-        <input type="checkbox" id="include-lowercase" class="include-options include-lowercase js-include-lowercase"
-          checked>
-        Lowercase
-      </label>
+        <div class="toggle-charset-div js-toggle-charset-div">
+          <label for="include-uppercase"
+            class="include-options-label include-uppercase-label js-include-uppercase-label">
+            <input type="checkbox" id="include-uppercase" class="include-options include-uppercase js-include-uppercase include-checkboxes"
+              checked>
+            Include Uppercase
+          </label>
 
-      <label for="include-numbers" class="include-options-label include-numbers-label js-include-numbers-label">
-        <input type="checkbox" id="include-numbers" class="include-options include-numbers js-include-numbers" checked>
-        Numbers
-      </label>
+          <label for="include-lowercase"
+            class="include-options-label include-lowercase-label js-include-lowercase-label">
+            <input type="checkbox" id="include-lowercase" class="include-options include-lowercase js-include-lowercase include-checkboxes"
+              checked>
+            Include Lowercase
+          </label>
 
-      <label for="include-symbols" class="include-options-label include-symbols-label js-include-symbols-label">
-        <input type="checkbox" id="include-symbols" class="include-options include-symbols js-include-symbols">
-        Symbols
-      </label>
+          <label for="include-numbers" class="include-options-label include-numbers-label js-include-numbers-label">
+            <input type="checkbox" id="include-numbers" class="include-options include-numbers js-include-numbers include-checkboxes"
+              checked>
+            Include Numbers
+          </label>
+
+          <label for="include-symbols" class="include-options-label include-symbols-label js-include-symbols-label">
+            <input type="checkbox" id="include-symbols" class="include-options include-symbols js-include-symbols include-checkboxes">
+            Include Symbols
+          </label>
+        </div>
+      </div>
+
+      <button class="generate-password-btn js-generate-password-btn">Generate Password</button>
+
     </div>
-
-    <div class="password-div js-password-div"></div>
-    <button class="copy-btn js-copy-btn">Copy</button>
-    <div class="message-div js-message-div"></div>
   </main>
 
   <footer class="footer">
-    
+
   </footer>
 
 

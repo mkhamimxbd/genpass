@@ -2,6 +2,7 @@ const passwordLengthInput = document.querySelector('.js-password-length-input');
 const generatePasswordBtn = document.querySelector('.js-generate-password-btn');
 const passwordDiv = document.querySelector('.js-password-div');
 const copyBtn = document.querySelector('.js-copy-btn');
+const copyIcon = document.querySelector('.js-copy-icon');
 const messageDiv = document.querySelector('.js-message-div');
 
 const includeUppercase = document.querySelector('.js-include-uppercase');
@@ -16,11 +17,16 @@ const symbolChars = `'~!@#$%^&*(){}[]_-+=/<>,.;:'`;
 
 let timeoutId;
 
+timeoutId = setTimeout(() => {
+  messageDiv.textContent = ``;
+}, 4000);
+messageDiv.textContent = `Programmed and Designed by M. K. Hamim`;
+
 generatePasswordBtn.addEventListener('click', () => {
   passwordDiv.textContent = `${generatePassword()}`;
 });
 
-copyBtn.addEventListener('click', copyPassword);
+copyIcon.addEventListener('click', copyPassword);
 
 function generatePassword(uppercase, lowercase, numbers, symbols) {
   uppercase = includeUppercase.checked;
@@ -43,16 +49,20 @@ function generatePassword(uppercase, lowercase, numbers, symbols) {
 
     timeoutId = setTimeout(() => {
       messageDiv.textContent = ``;
+      messageDiv.classList.remove('message-div-error');
     }, 2000);
 
+    messageDiv.classList.add('message-div-error');
     messageDiv.textContent = `Length cannot be less than 1.`;
   } else if (allowedChars.length === 0) {
     clearTimeout(timeoutId);
     
     timeoutId = setTimeout(() => {
       messageDiv.textContent = ``;
+      messageDiv.classList.remove('message-div-error');
     }, 2000);
 
+    messageDiv.classList.add('message-div-error');
     messageDiv.textContent = `Select at least one Charset.`;
   }
 

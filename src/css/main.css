@@ -1,0 +1,153 @@
+:root {
+  --page-bg: #061E29;
+  --password-generator-bg: #1D546D;
+  --font-color: #F3F4F4;
+  --font-color-opposite: #080808;
+  --message-font-color-normal: #628899;
+  --message-font-color-error: #e70000;
+  --accent-color: #5F9598;
+  --generate-password-btn-bg: #2E8B57;
+  --generate-password-btn-bg-hover: #37a767;
+  --generate-password-btn-bg-click: #33915b;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--font-color);
+}
+
+.heading {
+  color: var(--accent-color);
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  font-size: 2.8rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+}
+
+.password-generator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 0;
+  background-color: var(--password-generator-bg);
+  font-size: 1.2rem;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.message-div {
+  color: var(--message-font-color-normal);
+  font-size: 0.8em;
+  min-height: 1.6em;
+  margin: -0.8em 0 0.8em 0;
+}
+
+.message-div-error {
+  color: var(--message-font-color-error);
+}
+
+.password-field-div {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.password-div {
+  background-color: var(--font-color);
+  color: var(--font-color-opposite);
+  padding: 0.4em;
+  width: 12em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 1.2em;
+  min-height: 2em;
+  border-radius: 6px 0 0 6px;
+}
+
+.copy-btn {
+  padding: 0;
+  margin: 0;
+  background-color: var(--message-font-color-normal);
+  border: none;
+  width: 4em;
+  border-radius: 0 6px 6px 0;
+  border-left: 0.5px solid black;
+}
+
+.copy-icon {
+  width: 3em;
+  padding: 0;
+  margin: 0;
+}
+
+.options-div {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 2.6em 0;
+}
+
+.password-length-input-label {
+  font-size: 1.1em;
+}
+
+.password-length-input {
+  width: 3em;
+  height: 1.4em;
+  font-size: 0.8em;
+  text-align: center;
+  outline: none;
+  background-color: var(--font-color);
+  border: none;
+  border-radius: 4px;
+}
+
+.toggle-charset-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.include-checkboxes {
+  margin: 1.4em 0 0 0;
+}
+
+.generate-password-btn {
+  font-size: 1em;
+  width: 14em;
+  color: var(--font-color-opposite);
+  background-color: var(--generate-password-btn-bg);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5em 0.3em;
+
+  &:hover {
+    background-color: var(--generate-password-btn-bg-hover);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: var(--generate-password-btn-bg-click);
+  }
+}
