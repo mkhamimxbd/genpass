@@ -7,6 +7,9 @@
 
   <link rel="stylesheet" href="/src/css/main.css">
   <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#1e90ff">
+
 
   <title>GenPass</title>
 </head>
@@ -35,26 +38,27 @@
         <div class="toggle-charset-div js-toggle-charset-div">
           <label for="include-uppercase"
             class="include-options-label include-uppercase-label js-include-uppercase-label">
-            <input type="checkbox" id="include-uppercase" class="include-options include-uppercase js-include-uppercase include-checkboxes"
-              checked>
+            <input type="checkbox" id="include-uppercase"
+              class="include-options include-uppercase js-include-uppercase include-checkboxes" checked>
             Include Uppercase
           </label>
 
           <label for="include-lowercase"
             class="include-options-label include-lowercase-label js-include-lowercase-label">
-            <input type="checkbox" id="include-lowercase" class="include-options include-lowercase js-include-lowercase include-checkboxes"
-              checked>
+            <input type="checkbox" id="include-lowercase"
+              class="include-options include-lowercase js-include-lowercase include-checkboxes" checked>
             Include Lowercase
           </label>
 
           <label for="include-numbers" class="include-options-label include-numbers-label js-include-numbers-label">
-            <input type="checkbox" id="include-numbers" class="include-options include-numbers js-include-numbers include-checkboxes"
-              checked>
+            <input type="checkbox" id="include-numbers"
+              class="include-options include-numbers js-include-numbers include-checkboxes" checked>
             Include Numbers
           </label>
 
           <label for="include-symbols" class="include-options-label include-symbols-label js-include-symbols-label">
-            <input type="checkbox" id="include-symbols" class="include-options include-symbols js-include-symbols include-checkboxes">
+            <input type="checkbox" id="include-symbols"
+              class="include-options include-symbols js-include-symbols include-checkboxes">
             Include Symbols
           </label>
         </div>
@@ -71,6 +75,8 @@
 
 
   <script src="/src/js/main.js"></script>
+  <script src="/src/js/register-service-worker.js"></script>
+  <script src="/src/js/register-service-worker.js"></script>
 </body>
 
 </html>
