@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="stylesheet" href="/src/css/main.css">
   <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 
   <title>GenPass</title>
 </head>
+
 <body>
-  <label for="password-length-input"></label>
-  <input type="number" id="password-length-input" class="password-length-input js-password-length-input" min="1" value="16">
-  <button class="generate-password-btn js-generate-password-btn">Generate Password</button>
-  <div class="toggle-charset-div js-toggle-charset-div">
-    <input type="checkbox" id="include-uppercase" class="include-options include-uppercase js-include-uppercase" checked>
-    <label for="include-uppercase" class="include-options-label include-uppercase-label js-include-uppercase-label" >Uppercase</label>
+  <header class="header">
+    <h1 class="heading">GenPass_</h1>
+  </header>
 
-    <input type="checkbox" id="include-lowercase" class="include-options include-lowercase js-include-lowercase" checked>
-    <label for="include-lowercase" class="include-options-label include-lowercase-label js-include-lowercase-label" >Lowercase</label>
+  <main class="main">
+    <label for="password-length-input"> Password Length:
+      <input type="number" id="password-length-input" class="password-length-input js-password-length-input" min="1"
+        value="16"></label>
 
-    <input type="checkbox" id="include-numbers" class="include-options include-numbers js-include-numbers" checked>
-    <label for="include-numbers" class="include-options-label include-numbers-label js-include-numbers-label" >Numbers</label>
+    <button class="generate-password-btn js-generate-password-btn">Generate Password</button>
 
-    <input type="checkbox" id="include-symbols" class="include-options include-symbols js-include-symbols">
-    <label for="include-symbols" class="include-options-label include-symbols-label js-include-symbols-label">Symbols</label>
-  </div>
-  <div class="password-div js-password-div"></div>
-  <button class="copy-btn js-copy-btn">Copy</button>
-  <div class="message-div js-message-div"></div>
+    <div class="toggle-charset-div js-toggle-charset-div">
+      <label for="include-uppercase" class="include-options-label include-uppercase-label js-include-uppercase-label">
+        <input type="checkbox" id="include-uppercase" class="include-options include-uppercase js-include-uppercase"
+          checked>
+        Uppercase
+      </label>
+
+      <label for="include-lowercase" class="include-options-label include-lowercase-label js-include-lowercase-label">
+        <input type="checkbox" id="include-lowercase" class="include-options include-lowercase js-include-lowercase"
+          checked>
+        Lowercase
+      </label>
+
+      <label for="include-numbers" class="include-options-label include-numbers-label js-include-numbers-label">
+        <input type="checkbox" id="include-numbers" class="include-options include-numbers js-include-numbers" checked>
+        Numbers
+      </label>
+
+      <label for="include-symbols" class="include-options-label include-symbols-label js-include-symbols-label">
+        <input type="checkbox" id="include-symbols" class="include-options include-symbols js-include-symbols">
+        Symbols
+      </label>
+    </div>
+
+    <div class="password-div js-password-div"></div>
+    <button class="copy-btn js-copy-btn">Copy</button>
+    <div class="message-div js-message-div"></div>
+  </main>
+
+  <footer class="footer">
+    
+  </footer>
+
 
   <script src="/src/js/main.js"></script>
 </body>
+
 </html>
