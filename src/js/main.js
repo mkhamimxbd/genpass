@@ -1,6 +1,8 @@
 const passwordLengthInput = document.querySelector('.js-password-length-input');
 const generatePasswordBtn = document.querySelector('.js-generate-password-btn');
 const passwordDiv = document.querySelector('.js-password-div');
+const copyBtn = document.querySelector('.js-copy-btn');
+const messageDiv = document.querySelector('.js-message-div');
 
 const includeUppercase = document.querySelector('.js-include-uppercase');
 const includeLowercase = document.querySelector('.js-include-lowercase');
@@ -12,11 +14,13 @@ const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
 const numberChars = '1234567890';
 const symbolChars = `'~!@#$%^&*(){}[]_-+=/<>,.;:'`;
 
-
+let timeoutId;
 
 generatePasswordBtn.addEventListener('click', () => {
-  passwordDiv.textContent = `Password: ${generatePassword()}`;
+  passwordDiv.textContent = `${generatePassword()}`;
 });
+
+copyBtn.addEventListener('click', copyPassword);
 
 function generatePassword(uppercase, lowercase, numbers, symbols) {
   uppercase = includeUppercase.checked;
@@ -35,15 +39,43 @@ function generatePassword(uppercase, lowercase, numbers, symbols) {
   let password = '';
 
   if (length <= 0) {
-    alert('Length cannot be less than 1.')
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      messageDiv.textContent = ``;
+    }, 2000);
+
+    messageDiv.textContent = `Length cannot be less than 1.`;
   } else if (allowedChars.length === 0) {
-    alert('Select at least one Charset.')
+    clearTimeout(timeoutId);
+    
+    timeoutId = setTimeout(() => {
+      messageDiv.textContent = ``;
+    }, 2000);
+
+    messageDiv.textContent = `Select at least one Charset.`;
   }
 
-  for (let i = 0; i < length; i ++) {
+  for (let i = 0; i < length; i++) {
     const randomNum = Math.floor(Math.random() * allowedChars.length) + 1;
     password += allowedChars.charAt(randomNum);
   }
 
   return password;
+}
+
+function copyPassword() {
+  const password = passwordDiv.textContent;
+
+  if (password.length !== 0) {
+    navigator.clipboard.writeText(password);
+
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      messageDiv.textContent = ``;
+    }, 2000);
+
+    messageDiv.textContent = `Password copied to clipboard!`
+  }
 }
